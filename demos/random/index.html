@@ -45,6 +45,36 @@
 				amount: 100000000
 			});
 
+			var data = JSON.parse(`{
+				"label": "I am a node",
+				"amount": 1000000,
+				"children": [
+					{
+						"label": "I am the 1st child",
+						"amount": 400000,
+						"children":[
+							{
+								"label": "I am the 1st child of the 1st",
+								"amount": 200000
+							},
+							{
+								"label": "I am the 2nd child of the 1st",
+								"amount": 200000
+							}
+						]
+					},
+					{
+						"label": "I am the 2nd child",
+						"amount": 600000
+					},
+					{
+						"label": "I am the 3rd child",
+						"amount": 600000
+					}
+				]
+			}`);
+			console.log(data.children);
+
 			new BubbleTree({
 				data: data,
 				container: '.bubbletree'
